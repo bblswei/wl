@@ -1,6 +1,8 @@
 package org.springframework.beans;
 
 import org.springframework.beans.factory.config.BeanMetadataElement;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
 import org.springframework.core.AttributeAccessor;
 
 public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
@@ -29,7 +31,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	
 	String getScope();
 
-	void setLazyI
+	void setLazyInit(boolean lazyInit);
 	
 	boolean isLazyInit();
 

@@ -1,6 +1,9 @@
 package org.springframework.beans.factory;
 
 import org.springframework.beans.BeansException;
+import org.springframework.core.ResolvableType;
+import org.springframework.util.ClassUtils;
+import org.springframework.util.StringUtils;
 
 @SuppressWarnings("serial")
 public class NoSuchBeanDefinitionException extends BeansException {
