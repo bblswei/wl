@@ -16,9 +16,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.wl.spring</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+	<groupId>com.wl.spring</groupId>
+	<artifactId>spring-core</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
   </dependencies>
 </project>
