@@ -5,7 +5,7 @@
   <groupId>com.wl.spring</groupId>
   <artifactId>spring-deploy</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>spring-deploy</name>
   <url>http://maven.apache.org</url>
@@ -15,6 +15,13 @@
   </properties>
 
   <dependencies>
-  
+  	
   </dependencies>
+  
+  <modules>
+  	<module>../spring-core</module>
+  	<module>../spring-beans</module>
+  	<module>../spring-context</module>
+  	<module>../spring-web</module>
+  </modules>
 </project>
