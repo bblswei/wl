@@ -2,6 +2,7 @@ package org.springframework.context.support;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 
 public class FileSystemXmlApplicationContext extends AbstractXmlApplicationContext {

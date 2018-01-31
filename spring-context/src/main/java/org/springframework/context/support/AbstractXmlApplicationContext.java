@@ -3,7 +3,9 @@ package org.springframework.context.support;
 import java.io.IOException;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.core.io.Resource;
 
 public abstract class AbstractXmlApplicationContext extends AbstractRefreshableConfigApplicationContext {
 

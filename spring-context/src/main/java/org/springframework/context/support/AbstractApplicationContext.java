@@ -1,31 +1,46 @@
 package org.springframework.context.support;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.CachedIntrospectionResults;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.LifecycleProcessor;
 import org.springframework.context.MessageSource;
+import org.springframework.context.MessageSourceResolvable;
+import org.springframework.context.NoSuchMessageException;
 import org.springframework.context.event.ApplicationEventMulticaster;
 import org.springframework.context.event.ContextClosedEvent;
+import org.springframework.core.ResolvableType;
 import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.core.env.Environment;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.ReflectionUtils;
 
 public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		implements ConfigurableApplicationContext, DisposableBean {

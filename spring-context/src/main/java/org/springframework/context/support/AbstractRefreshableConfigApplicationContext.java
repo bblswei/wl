@@ -1,6 +1,10 @@
 package org.springframework.context.support;
 
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 public abstract class AbstractRefreshableConfigApplicationContext extends AbstractRefreshableApplicationContext
 		implements BeanNameAware, InitializingBean {
@@ -118,7 +122,7 @@ public abstract class AbstractRefreshableConfigApplicationContext extends Abstra
 	 * Triggers {@link #refresh()} if not refreshed in the concrete context's
 	 * constructor already.
 	 */
-	@Override
+	//@Override
 	public void afterPropertiesSet() {
 		if (!isActive()) {
 			refresh();
